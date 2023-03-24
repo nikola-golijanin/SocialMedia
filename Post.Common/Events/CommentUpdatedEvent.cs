@@ -9,7 +9,7 @@ public class CommentUpdatedEvent : BaseEvent
     public string Username { get; set; }
     public DateTime EditDate { get; set; }
     
-    public CommentUpdatedEvent(string type) : base(nameof(CommentUpdatedEvent))
+    public CommentUpdatedEvent() : base(nameof(CommentUpdatedEvent))
     {
     }
 }

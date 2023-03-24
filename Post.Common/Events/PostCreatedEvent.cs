@@ -8,7 +8,8 @@ public class PostCreatedEvent : BaseEvent
     public string Message { get; set; }
     public DateTime DatePosted { get; set; }
     
-    public PostCreatedEvent(string type) : base(nameof(PostCreatedEvent))
+    public PostCreatedEvent() : base(nameof(PostCreatedEvent))
     {
     }
+
 }

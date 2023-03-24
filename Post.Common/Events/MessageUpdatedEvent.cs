@@ -6,7 +6,7 @@ public class MessageUpdatedEvent : BaseEvent
 {
     public string Message { get; set; }
     
-    public MessageUpdatedEvent(string type) : base(nameof(MessageUpdatedEvent))
+    public MessageUpdatedEvent() : base(nameof(MessageUpdatedEvent))
     {
     }
 }
