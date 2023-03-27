@@ -9,7 +9,7 @@ public abstract class AggregateRoot
 
     public Guid Id => _id;
     public int Version { get; set; } = -1;
-    public IEnumerable<BaseEvent> GetUncommitedChanges => _changes;
+    public IEnumerable<BaseEvent> GetUncommitedChanges() =>_changes;
 
     public void MarkChangesAsCommited()
     {
