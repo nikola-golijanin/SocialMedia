@@ -1,4 +1,4 @@
-﻿namespace Post.Command.Infrastructure;
+﻿namespace Post.Command.Infrastructure.Config;
 
 public class MongoDbConfig
 {

@@ -1,7 +1,7 @@
 ﻿using CQRS.Core.Domain;
 using Post.Common.Events;
 
-namespace Post.Cmd.Domain.Aggregates
+namespace Post.Command.Domain.Aggregates
 {
     public class PostAggregate : AggregateRoot
     {

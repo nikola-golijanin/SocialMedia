@@ -1,5 +1,5 @@
 ﻿using CQRS.Core.Handlers;
-using Post.Cmd.Domain.Aggregates;
+using Post.Command.Domain.Aggregates;
 
 namespace Post.Command.API.Commands;
 

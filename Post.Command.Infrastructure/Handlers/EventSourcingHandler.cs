@@ -1,7 +1,7 @@
 ﻿using CQRS.Core.Domain;
 using CQRS.Core.Handlers;
 using CQRS.Core.Infrastructure;
-using Post.Cmd.Domain.Aggregates;
+using Post.Command.Domain.Aggregates;
 
 namespace Post.Command.Infrastructure.Handlers;
 

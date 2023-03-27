@@ -2,6 +2,7 @@
 using CQRS.Core.Events;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Post.Command.Infrastructure.Config;
 
 namespace Post.Command.Infrastructure.Repositories;
 
