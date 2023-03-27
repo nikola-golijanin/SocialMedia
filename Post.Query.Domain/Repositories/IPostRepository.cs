@@ -11,5 +11,5 @@ public interface IPostRepository
     Task<List<PostEntity>> ListAllAsync();
     Task<List<PostEntity>> ListByAuthorAsync(string author);
     Task<List<PostEntity>> ListWithLikesAsync(int numberOfLikes);
-    Task<List<PostEntity>> ListWithComments();
+    Task<List<PostEntity>> ListWithCommentsAsync();
 }
