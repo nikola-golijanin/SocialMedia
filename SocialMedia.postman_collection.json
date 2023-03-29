@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "bef13f4d-e0e8-456c-867c-862094fef052",
+		"name": "SocialMedia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Commands",
+			"item": [
+				{
+					"name": "Create New Social Media Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\" : \"nikola\",\r\n    \"message\" : \"microservices are amazing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/newPost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"newPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit message of a Social Media Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"microservices are really, really amazing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/editMessage/3262d2aa-4cd1-4443-bad5-b3e68cc14782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"editMessage",
+								"3262d2aa-4cd1-4443-bad5-b3e68cc14782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like Social Media Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5157/api/v1/likePost/3262d2aa-4cd1-4443-bad5-b3e68cc14782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"likePost",
+								"3262d2aa-4cd1-4443-bad5-b3e68cc14782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment a Social Media Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"I agree totally!\",\r\n    \"username\": \"Engineer97\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/addComment/3262d2aa-4cd1-4443-bad5-b3e68cc14782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"addComment",
+								"3262d2aa-4cd1-4443-bad5-b3e68cc14782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit comment on a Social Media Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"f59c6987-2b46-465b-b8b7-e96028f150dc\",\r\n    \"comment\": \"I dont really agree!\",\r\n    \"username\": \"Engineer97\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/editComment/3262d2aa-4cd1-4443-bad5-b3e68cc14782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"editComment",
+								"3262d2aa-4cd1-4443-bad5-b3e68cc14782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Social Media Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/deletePost/e816378a-1471-4033-ad52-b81a3a79fcaf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"deletePost",
+								"e816378a-1471-4033-ad52-b81a3a79fcaf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove comment from Social Media Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"f59c6987-2b46-465b-b8b7-e96028f150dc\",\r\n    \"username\": \"Engineer97\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5157/api/v1/removeComment/3262d2aa-4cd1-4443-bad5-b3e68cc14782",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5157",
+							"path": [
+								"api",
+								"v1",
+								"removeComment",
+								"3262d2aa-4cd1-4443-bad5-b3e68cc14782"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queries",
+			"item": [
+				{
+					"name": "Get all Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5117/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5117",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5117/api/v1/posts/94bcdaee-3fd4-4b70-8837-ae9e341ab9d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5117",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"94bcdaee-3fd4-4b70-8837-ae9e341ab9d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts by Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5117/api/v1/posts/byAuthor/nikola",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5117",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"byAuthor",
+								"nikola"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts with Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5117/api/v1/posts/withComments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5117",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"withComments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts with concrete number of likes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5117/api/v1/posts/withLikes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5117",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"withLikes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
