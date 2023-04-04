@@ -42,7 +42,7 @@ services:
     restart: always
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=myPassword
+      - SA_PASSWORD=myPassword.12
       - MSSQL_PID=Express
     ports:
       - '1433:1433'
