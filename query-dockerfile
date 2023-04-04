@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+WORKDIR /home/app
+COPY . .
+RUN dotnet restore
+RUN dotnet publish ./Post.Query.API/Post.Query.API.csproj -o /publish/
+WORKDIR /publish
+ENV ASPNETCORE_URLS=http://+:5117
+ENV KAFKA_TOPIC=SocialMediaPostEvents
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENTRYPOINT ["dotnet", "Post.Query.API.dll"]
