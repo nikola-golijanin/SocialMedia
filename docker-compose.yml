@@ -10,6 +10,7 @@ services:
       - "zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+
   kafka:
     image: bitnami/kafka
     ports:
@@ -21,16 +22,60 @@ services:
       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_LISTENERS=PLAINTEXT://:9092
-      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
     depends_on:
       - zookeeper
+
+  mongo:
+    container_name: mongo-container
+    ports:
+      - '27017:27017'
+    network_mode: mydockernetwork
+    restart: always
+    volumes:
+      - 'mongodb_data_container:/data/db'
+    image: 'mongo:latest'
+
+  mssql:
+    container_name: sql-container
+    network_mode: mydockernetwork
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=myPassword
+      - MSSQL_PID=Express
+    ports:
+      - '1433:1433'
+    image: 'mcr.microsoft.com/mssql/server:2017-latest-ubuntu'
+
+  cmdapi:
+    build:
+      context: ./
+      dockerfile: cmd-dockerfile
+    ports:
+      - '5157:5157'
+    network_mode: mydockernetwork
+    depends_on:
+      - mongo
+
+  queryapi:
+    build:
+      context: ./
+      dockerfile: query-dockerfile
+    ports:
+      - '5117:5117'
+    network_mode: mydockernetwork
+    depends_on:
+      - mssql
 
 volumes:
   zookeeper_data:
     driver: local
   kafka_data:
     driver: local
-   
+  mongodb_data_container:
+    driver: local
+
 networks:
   default:
     external:
